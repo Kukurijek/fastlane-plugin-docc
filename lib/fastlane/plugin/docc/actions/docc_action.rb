@@ -5,18 +5,15 @@ module Fastlane
   module Actions
     class DoccAction < Action
       def self.run(params)
-
         command = []
         command << "xcodebuild docbuild"
         command << "-scheme #{params[:scheme]}"
         command << "-derivedDataPath #{params[:derived_data_path]}" unless params[:derived_data_path].nil?
 
         shell_command = command.join(' ')
+        UI.message(shell_command.to_s)
 
-        UI.message "#{shell_command}"
-
-        sh("#{shell_command}")
-
+        sh(shell_command.to_s)
       end
 
       def self.description
@@ -55,7 +52,7 @@ module Fastlane
       def self.is_supported?(platform)
         # Adjust this if your plugin only works for a particular platform (iOS vs. Android, for example)
         # See: https://docs.fastlane.tools/advanced/#control-configuration-by-lane-and-by-platform
-          [:ios, :mac, :watch].include?(platform)
+        [:ios, :mac, :watch].include?(platform)
         true
       end
     end

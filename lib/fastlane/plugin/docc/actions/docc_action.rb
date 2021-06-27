@@ -5,7 +5,18 @@ module Fastlane
   module Actions
     class DoccAction < Action
       def self.run(params)
-        UI.message("The docc plugin is working!")
+
+        command = []
+        command << "xcodebuild docbuild"
+        command << "-scheme #{params[:scheme]}"
+        command << "-derivedDataPath #{params[:derived_data_path]}" unless params[:derived_data_path].nil?
+
+        shell_command = command.join(' ')
+
+        UI.message "#{shell_command}"
+
+        sh("#{shell_command}")
+
       end
 
       def self.description
@@ -27,19 +38,24 @@ module Fastlane
 
       def self.available_options
         [
-          # FastlaneCore::ConfigItem.new(key: :your_option,
-          #                         env_name: "DOCC_YOUR_OPTION",
-          #                      description: "A description of your option",
-          #                         optional: false,
-          #                             type: String)
+          FastlaneCore::ConfigItem.new(key: :scheme,
+                                       env_name: "DOCC_SCHEME",
+                                       description: "Scheme to use when calling docc",
+                                       optional: false,
+                                       type: String),
+
+          FastlaneCore::ConfigItem.new(key: :derived_data_path,
+                                       env_name: "DOCC_DERIVED_DATA_PATH",
+                                       description: "A description of your option",
+                                       optional: true,
+                                       type: String)
         ]
       end
 
       def self.is_supported?(platform)
         # Adjust this if your plugin only works for a particular platform (iOS vs. Android, for example)
         # See: https://docs.fastlane.tools/advanced/#control-configuration-by-lane-and-by-platform
-        #
-        # [:ios, :mac, :android].include?(platform)
+          [:ios, :mac, :watch].include?(platform)
         true
       end
     end

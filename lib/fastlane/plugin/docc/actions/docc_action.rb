@@ -13,6 +13,8 @@ module Fastlane
         shell_command = command.join(' ')
         UI.message(shell_command.to_s)
 
+        (UI.user_error!("Make sure Xcode 13 is installed and select it for Command Line Tool - your version: #{selected_version}") unless selected_version.to_i >= 13.0) unless sh("xcodebuild -version").match(/^Xcode (.*)$/).nil?
+
         sh(shell_command.to_s)
       end
 

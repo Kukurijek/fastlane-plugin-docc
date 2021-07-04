@@ -29,10 +29,10 @@ docc(
 
 ## List of all Parameters
 
-| Key              | Description                            | default value |
-| ---------------- | -------------------------------------- | ------------- |
-| scheme           | The Scheme you want generate DocC for. |               |
-| derived_data_pah | The path to write the DocC to Connect. |               |
+| Key               | Description                            | default value |
+| ----------------- | -------------------------------------- | ------------- |
+| scheme            | The Scheme you want generate DocC for. |               |
+| derived_data_path | The path to write the DocC to Connect. |               |
 
 ## Run tests for this plugin
 

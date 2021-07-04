@@ -32,7 +32,7 @@ docc(
 | Key               | Description                            | default value |
 | ----------------- | -------------------------------------- | ------------- |
 | scheme            | The Scheme you want generate DocC for. |               |
-| derived_data_path | The path to write the DocC to Connect. |               |
+| derived_data_path | The path to write the DocC to.         |               |
 
 ## Run tests for this plugin
 

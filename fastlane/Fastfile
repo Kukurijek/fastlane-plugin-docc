@@ -1,3 +1,6 @@
 lane :test do
-  docc
+  docc(
+    scheme: "Test",
+    derived_data_path: "docs"
+  )
 end

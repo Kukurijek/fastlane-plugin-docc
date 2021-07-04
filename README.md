@@ -12,15 +12,27 @@ fastlane add_plugin docc
 
 ## About docc
 
-Automate docc - documentation for swift frameworks and packages
-
-**Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
+Automate DocC - documentation for swift frameworks and packages
 
 ## Example
 
 Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
 
-**Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
+#### Fastfile
+
+```ruby
+docc(
+	scheme: "<Name of your package/library scheme>",
+	derived_data_path: "<The path to write the DocC to>"
+)
+```
+
+## List of all Parameters
+
+| Key              | Description                            | default value |
+| ---------------- | -------------------------------------- | ------------- |
+| scheme           | The Scheme you want generate DocC for. |               |
+| derived_data_pah | The path to write the DocC to Connect. |               |
 
 ## Run tests for this plugin
 
@@ -31,6 +43,7 @@ rake
 ```
 
 To automatically fix many of the styling issues, use
+
 ```
 rubocop -a
 ```

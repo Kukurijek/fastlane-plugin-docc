@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.email         = 'nemanja.filipovic@stud.fh-campuswien.ac.at'
 
   spec.summary       = 'Automate docc - documentation for swift frameworks and packages'
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-docc"
+  spec.homepage      = "https://github.com/Kukurijek/fastlane-plugin-docc"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)

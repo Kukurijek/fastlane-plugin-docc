@@ -44,18 +44,18 @@ module Fastlane
         [
           FastlaneCore::ConfigItem.new(key: :scheme,
                                        env_name: "DOCC_SCHEME",
-                                       description: "Scheme to use when calling docc",
+                                       description: "The scheme to use when calling docc",
                                        optional: false,
                                        type: String),
 
           FastlaneCore::ConfigItem.new(key: :derived_data_path,
                                        env_name: "DOCC_DERIVED_DATA_PATH",
-                                       description: "Path where the documentation will be created",
+                                       description: "The path where the documentation will be created",
                                        optional: true,
                                        type: String),
           FastlaneCore::ConfigItem.new(key: :destination,
                                        env_name: "DESTINATION",
-                                       description: "Destination of project (required for swift packages)",
+                                       description: "The destination of project (required for swift packages)",
                                        optional: true,
                                        type: String)
         ]

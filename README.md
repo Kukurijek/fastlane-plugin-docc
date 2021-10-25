@@ -22,7 +22,7 @@ Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plu
 
 ```ruby
 docc(
-	scheme: "<Name of your package/library scheme>",
+	scheme: "<The name of your package/library scheme>",
 	derived_data_path: "<The path to write the DocC to>"
 )
 ```

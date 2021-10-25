@@ -22,17 +22,18 @@ Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plu
 
 ```ruby
 docc(
-	scheme: "<Name of your package/library scheme>",
+	scheme: "<The name of your package/library scheme>",
 	derived_data_path: "<The path to write the DocC to>"
 )
 ```
 
 ## List of all Parameters
 
-| Key               | Description                            | default value |
-| ----------------- | -------------------------------------- | ------------- |
-| scheme            | The Scheme you want generate DocC for. |               |
-| derived_data_path | The path to write the DocC to.         |               |
+| Key               | Description                           					 | default value |
+| ----------------- | ---------------------------------------------------------- | ------------- |
+| scheme            | The scheme you want generate DocC for.					 |               |
+| derived_data_path | The path to write the DocC to.      						 |               |
+| destination		| The destination of project (required for swift packages)	 |				 |
 
 ## Run tests for this plugin
 

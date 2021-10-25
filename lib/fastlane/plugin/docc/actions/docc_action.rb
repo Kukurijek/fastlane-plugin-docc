@@ -9,6 +9,7 @@ module Fastlane
         command << "xcodebuild docbuild"
         command << "-scheme #{params[:scheme]}"
         command << "-derivedDataPath #{params[:derived_data_path]}" unless params[:derived_data_path].nil?
+        command << "-destination #{params[:destination]}" unless params[:destination].nil?
 
         shell_command = command.join(' ')
         UI.message(shell_command.to_s)
@@ -49,7 +50,12 @@ module Fastlane
 
           FastlaneCore::ConfigItem.new(key: :derived_data_path,
                                        env_name: "DOCC_DERIVED_DATA_PATH",
-                                       description: "A description of your option",
+                                       description: "Path where the documentation will be created",
+                                       optional: true,
+                                       type: String),
+          FastlaneCore::ConfigItem.new(key: :destination,
+                                       env_name: "DESTINATION",
+                                       description: "Destination of project (required for swift packages)",
                                        optional: true,
                                        type: String)
         ]

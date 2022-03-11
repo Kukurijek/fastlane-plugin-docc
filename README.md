@@ -29,12 +29,12 @@ docc(
 
 ## List of all Parameters
 
-| Key               | Description                                                  | default value |
-| ----------------- | ------------------------------------------------------------ | ------------- |
-| scheme            | The scheme you want generate DocC for.                       |               |
-| derived_data_path | The path to write the DocC to.                               |               |
-| destination       | The destination of the project (required for swift packages) |               |
-| configuration     | The configuration for building the project (e.g. 'Debug')    |               |
+| Key               | Description                                                   | default value |
+| ----------------- | ------------------------------------------------------------- | ------------- |
+| scheme            | The scheme you want generate DocC for.                        |               |
+| derived_data_path | The path to write the DocC to.                                |               |
+| destination       | The destination of the project (required for swift packages). |               |
+| configuration     | The configuration for building the project (e.g. 'Debug').    |               |
 
 ## Run tests for this plugin
 

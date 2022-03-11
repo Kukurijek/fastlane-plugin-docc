@@ -10,6 +10,8 @@ module Fastlane
         command << "-scheme #{params[:scheme]}"
         command << "-derivedDataPath #{params[:derived_data_path]}" unless params[:derived_data_path].nil?
         command << "-destination #{params[:destination]}" unless params[:destination].nil?
+        command << "-configuration #{params[:configuration]}" unless params[:configuration].nil?
+
 
         shell_command = command.join(' ')
         UI.message(shell_command.to_s)
@@ -55,7 +57,12 @@ module Fastlane
                                        type: String),
           FastlaneCore::ConfigItem.new(key: :destination,
                                        env_name: "DESTINATION",
-                                       description: "The destination of project (required for swift packages)",
+                                       description: "The destination of the project (required for swift packages)",
+                                       optional: true,
+                                       type: String)
+          FastlaneCore::ConfigItem.new(key: :configuration,
+                                       env_name: "CONFIGURATION",
+                                       description: "The configuration for building the project" (e.g. 'Debug'),
                                        optional: true,
                                        type: String)
         ]

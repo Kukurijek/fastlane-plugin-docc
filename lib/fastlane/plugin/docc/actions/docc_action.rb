@@ -12,7 +12,6 @@ module Fastlane
         command << "-destination #{params[:destination]}" unless params[:destination].nil?
         command << "-configuration #{params[:configuration]}" unless params[:configuration].nil?
 
-
         shell_command = command.join(' ')
         UI.message(shell_command.to_s)
         selected_version = sh("xcodebuild -version").match(/^Xcode (.*)$/)
@@ -59,10 +58,10 @@ module Fastlane
                                        env_name: "DESTINATION",
                                        description: "The destination of the project (required for swift packages)",
                                        optional: true,
-                                       type: String)
+                                       type: String),
           FastlaneCore::ConfigItem.new(key: :configuration,
                                        env_name: "CONFIGURATION",
-                                       description: "The configuration for building the project" (e.g. 'Debug'),
+                                       description: "The configuration for building the project (e.g. 'Debug')",
                                        optional: true,
                                        type: String)
         ]

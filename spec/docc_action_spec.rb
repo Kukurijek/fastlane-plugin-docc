@@ -18,6 +18,12 @@ describe Fastlane::Actions::DoccAction do
       Fastlane::Actions::DoccAction.run(scheme: "test", destination: "generic/platform=macOS")
     end
 
+    it 'generate docc with specific configuration' do
+      expect(Fastlane::UI).to receive(:message).with("xcodebuild docbuild -scheme test -configuration Debug")
+
+      Fastlane::Actions::DoccAction.run(scheme: "test", configuration: "Debug")
+    end
+
     it 'generate docc with specific derived data path and destination' do
       expect(Fastlane::UI).to receive(:message).with("xcodebuild docbuild -scheme test -derivedDataPath testPath -destination generic/platform=macOS")
 

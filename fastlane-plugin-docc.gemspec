@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'fastlane-plugin-docc'
   spec.version       = Fastlane::Docc::VERSION
   spec.author        = 'Kukurijek'
-  spec.email         = 'nemanja.filipovic@stud.fh-campuswien.ac.at'
+  spec.email         = 'nemanja82filipo@gmail.com'
 
   spec.summary       = 'Automate docc - documentation for swift frameworks and packages'
   spec.homepage      = "https://github.com/Kukurijek/fastlane-plugin-docc"

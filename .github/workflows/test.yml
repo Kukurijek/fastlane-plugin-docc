@@ -6,6 +6,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby-version: ['2.4', '2.7', '3.0']
     steps:
     - uses: actions/checkout@v4
     - uses: actions/cache@v4.2.0
@@ -17,7 +20,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1.206.0
       with:
-        ruby-version: 2.4
+        ruby-version: ${{ matrix.ruby-version }}
     - name: Install dependencies
       run: bundle check || bundle install --jobs=4 --retry=3 --path vendor/bundle
     - name: Run tests

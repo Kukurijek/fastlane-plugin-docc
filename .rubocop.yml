@@ -49,9 +49,9 @@ Require/MissingRequireStatement:
   - "**/Rakefile"
   - fastlane/**/*
   - supply/**/*
-Layout/IndentHash:
+Layout/FirstHashElementIndentation:
   Enabled: false
-Layout/AlignHash:
+Layout/HashAlignment:
   Enabled: false
 Layout/DotPosition:
   Enabled: false
@@ -59,12 +59,12 @@ Style/DoubleNegation:
   Enabled: false
 Style/SymbolArray:
   Enabled: false
-Layout/IndentHeredoc:
+Layout/HeredocIndentation:
   Enabled: false
 Style/MixinGrouping:
   Exclude:
   - "**/spec/**/*"
-Lint/HandleExceptions:
+Lint/SuppressedException:
   Enabled: false
 Lint/UnusedBlockArgument:
   Enabled: false

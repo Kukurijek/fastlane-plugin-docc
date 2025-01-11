@@ -18,7 +18,7 @@ module Fastlane
         pure_version = selected_version.to_s.sub('Xcode ', '')
 
         unless selected_version.nil? == true
-          UI.user_error!("Make sure Xcode 13 is installed and select it for Command Line Tool - your version: #{selected_version}") unless pure_version.to_i >= 13.0
+          UI.user_error!("Xcode 13 or newer is required. Please install Xcode 13 or newer and select it as the Command Line Tool. Detected version: #{selected_version}") unless pure_version.to_i >= 13.0
         end
 
         sh(shell_command.to_s)

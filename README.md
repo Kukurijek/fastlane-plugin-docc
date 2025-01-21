@@ -2,6 +2,8 @@
 
 [![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-docc)
 
+[![Gem Version](https://badge.fury.io/rb/fastlane-plugin-docc.svg)](https://badge.fury.io/rb/fastlane-plugin-docc)
+
 ![Gem Total Downloads](https://img.shields.io/gem/dt/fastlane-plugin-docc)
 
 ## Getting Started

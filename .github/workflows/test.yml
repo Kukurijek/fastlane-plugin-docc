@@ -19,7 +19,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gem-
     - name: Set up Ruby
-      uses: ruby/setup-ruby@v1.262.0
+      uses: ruby/setup-ruby@v1.265.0
       with:
         ruby-version: ${{ matrix.ruby-version }}
     - name: Install dependencies

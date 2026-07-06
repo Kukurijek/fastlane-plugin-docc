@@ -2,7 +2,12 @@ name: Test
 
 on:
   push:
+    branches:
+      - master
   pull_request:
+    branches:
+      - master
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -47,3 +52,55 @@ jobs:
           name: test-results-${{ matrix.ruby-version }}
           path: test-results
           if-no-files-found: ignore
+
+
+
+name: Test
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - ruby-version: '3.2'
+            experimental: false
+          - ruby-version: '3.3'
+            experimental: false
+          - ruby-version: '3.4'
+            experimental: false
+          - ruby-version: '4.0'
+            experimental: true
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+
+      - name: Run tests
+        run: bundle exec rake
